@@ -1,0 +1,67 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class provisionalFund
+{
+    protected:
+        double pfAmount;
+    public:
+        provisionalFund()
+        {
+            pfAmount=25000;
+        }
+};
+class Bank:public provisionalFund
+{
+    protected:
+        string branchCode;
+        string bankName;
+        int customerId;
+        double balanceAmt;
+        
+    public:
+        Bank()
+        {
+            branchCode="SBI001";
+            bankName="SBI";
+            customerId=1001;
+            balanceAmt=20000;
+            
+        }
+        
+};
+class Customer:public Bank
+{
+    public:
+        string customerName;
+        double totalAmount;
+     void getDetails()
+    {
+        cout<<"Enter Customer Name"<<endl;
+        getline(cin,customerName);
+        cout<<"Enter Customer Id"<<endl;
+        cin>>customerId;
+        if(customerId==1001)
+        {
+            cout<<"Bank Name: "<<bankName<<endl;
+            cout<<"Branch Code: "<<branchCode<<endl;
+            cout<<"Customer Id: "<<customerId<<endl;
+            totalAmount=pfAmount+balanceAmt;
+            cout<<"Total Balance: "<<totalAmount<<endl;
+        }
+        else
+        {
+            cout<<"Id Not Valid";
+            exit(0);
+        }
+ 
+    }
+};
+
+int main()
+{
+    Customer C1;
+    C1.getDetails();
+    return 0;
+}
