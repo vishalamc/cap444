@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+class B
+{
+public:
+    int x;
+    int y;
+    B()
+    {
+     x=0;
+     y=0;
+    }
+    B(int b,int c)
+    {
+        x=b;
+        y=c;
+    }
+    void getB()
+    {
+        cout<<x<<endl;
+        cout<<y<<endl;
+    }
+
+};
+
+class A
+{
+public:
+    int a;
+    int b;
+    A()
+    {
+        a=0;
+        b=0;
+    }
+    A(B B1)
+    {
+       a=B1.x;
+       b=B1.y;
+    }
+      void getA()
+    {
+        cout<<a<<endl;
+        cout<<b<<endl;
+    }
+
+};
+
+int main()
+{
+    A a1;
+    B b1(3,4);
+    a1=b1;
+    a1.getA();
+    return 0;
+}
