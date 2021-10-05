@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class base
+{
+     public:
+     int n1;
+     void show()
+     {
+          cout<<"n1 = "<<n1<<endl;
+     }
+};
+class derive : public base
+{
+     public:
+     int n2;
+     void show()
+     {
+         cout<<"n1 = "<<n1<<endl;
+         cout<<"n2 = "<<n2<<endl;
+     }
+};
+int main()
+{
+    base b;
+    base *bptr; //base class pointer
+    cout<<"Pointer of base class points to it"<<endl;
+    bptr=&b;
+    bptr->n1=45;
+    bptr->show();
+    derive d;
+    cout<<"Pointer of base class points to derive class"<<endl;
+    bptr=&d;
+    bptr->n1=65;
+    bptr->show();
+    return 0;
+}
