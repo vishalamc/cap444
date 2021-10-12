@@ -11,7 +11,9 @@ class Date
     public:
         Date()
             {
-                dd = mm = yy = 0;
+		 dd=0;
+		 mm=0;
+		 yy=0;
             }
 
         void getdata(int i, int j, int k)
@@ -33,17 +35,15 @@ int main()
     Date D1;
     Date *dptr;
 
-   D1.getdata(20,10,2020);
+   cout<<"printing members using the object ";
+   D1.getdata(20,10,2020);       
    D1.printdate();
 
     dptr = &D1;
     cout<<"Printing members using the object pointer ";
-    dptr->printdate();
+   
     dptr->getdata(20,10,2020);
-    cout<<"printing members using the object ";
-    D1.printdate();
-    cout<<"Printing members using the object pointer ";
     dptr->printdate();
-
+   
     return 0;
 }

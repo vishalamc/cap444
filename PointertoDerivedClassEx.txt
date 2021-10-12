@@ -1,36 +1,61 @@
-#include<iostream>
+// C++ program to implementation of the base class pointer pointing to derived class
+
+#include <iostream>
 using namespace std;
-class base
-{
-     public:
-     int n1;
-     void show()
-     {
-          cout<<"n1 = "<<n1<<endl;
-     }
+
+// Base Class
+class BaseClass {
+	public:
+		int x;
+
+	// Function to display the base class members
+	void display()
+	{
+		cout << "Displaying Base class"<<" variable in base" << x<< endl;
+	}
 };
-class derive : public base
+
+// Class derived from the Base Class
+
+class DerivedClass : public BaseClass 
 {
-     public:
-     int n2;
-     void show()
-     {
-         cout<<"n1 = "<<n1<<endl;
-         cout<<"n2 = "<<n2<<endl;
-     }
+public:
+	int y;
+
+	// Function to display the base and derived class members
+	void display()
+	{
+		cout << "Displaying Base class"<< "variable in base " << x << endl;
+		cout << "Displaying Derived "<< " variable in derive: "<< y << endl;
+	}
 };
+
 int main()
 {
-    base b;
-    base *bptr; //base class pointer
-    cout<<"Pointer of base class points to it"<<endl;
-    bptr=&b;
-    bptr->n1=45;
-    bptr->show();
-    derive d;
-    cout<<"Pointer of base class points to derive class"<<endl;
-    bptr=&d;
-    bptr->n1=65;
-    bptr->show();
-    return 0;
+	// Pointer to base class
+	BaseClass *ptrB;
+	BaseClass objB;
+
+	DerivedClass objD;
+
+	// Pointing to derived class
+
+	ptrB = &objD;
+
+	ptrB->x = 34;
+
+	// Calling base class member function
+	ptrB->display();
+
+	ptrB->x = 3400;
+	ptrB->display();
+ 
+	DerivedClass *ptrD;   
+
+	ptrD = &objD;
+	ptrD->x = 9448;
+	ptrD->y = 98;
+	ptrD->display();
+
+	return 0;
 }
