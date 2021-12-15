@@ -1,0 +1,21 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+   ofstream fout;
+   char ch;
+   fout.open("d://cpp//mynewfile.txt");
+   fout<<"kumar"<<endl;
+   fout<<"Vishal"<<endl;
+   fout.close();
+   ifstream fin;
+   fin.open("d://cpp//mynewfile.txt");
+   while(!fin.eof())
+   {
+       fin.get(ch);
+       cout<<ch;
+   }
+    return 0;
+}

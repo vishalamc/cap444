@@ -1,0 +1,23 @@
+   #include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+   ifstream fin;
+
+   fin.open("d:/cap444/myfile.txt");
+   int pos1=fin.tellg();
+   cout<<"Current position:"<<pos1<<endl;
+   fin.seekg(2,ios::cur);
+   int pos2=fin.tellg();
+   cout<<"Now Current position:"<<pos2<<endl;
+   char ch;
+   while(!fin.eof())
+   {
+       fin.get(ch);
+       cout<<ch;
+   }
+   fin.close();
+    return 0;
+}

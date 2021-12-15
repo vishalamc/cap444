@@ -1,0 +1,12 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main() 
+{
+int num1=10; 
+int num2=90;
+int num3=num1+num2;
+cout << "Setbase Value=" << " " << setbase(16) << num3 << endl; 
+ return 0;
+}

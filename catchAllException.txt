@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int ch=0;
+do{
+   try{
+   int phy_marks,chem_marks,math_marks;
+   int regno;
+   cout<<"Enter Student Reg No"<<endl;
+   cin>>regno;
+   cout<<"Enter marks for physics"<<endl;
+   cin>>phy_marks;
+   if(phy_marks<0 || phy_marks>100)
+   {
+       throw phy_marks;
+   }
+   cout<<"Enter chemistry marks"<<endl;
+   cin>>chem_marks;
+   if(chem_marks<0 ||chem_marks>100)
+   {
+       throw chem_marks;
+   }
+  cout<<"Enter Marks for Maths"<<endl;
+  cin>>math_marks;
+  if(math_marks<0 || math_marks>100)
+  {
+      throw math_marks;
+  }
+  ch=0;
+   }
+   catch(...)
+    {
+      cout<<"Invalid marks"<<endl;
+      ch=1;
+    }
+}while(ch);
+
+    return 0;
+}

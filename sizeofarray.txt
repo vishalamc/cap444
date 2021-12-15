@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[] = {0,1,2,3,4,5};
+    cout<<sizeof(a)<<endl;
+    cout<<sizeof(a[0])<<endl;
+  int a_size = sizeof(a)/sizeof(a[0]);
+   cout << "Size of the array is: " << a_size;
+    return 0;
+}

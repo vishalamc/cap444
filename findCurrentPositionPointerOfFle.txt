@@ -1,0 +1,22 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+   ifstream fin;
+   ofstream fout;
+   string str;
+   fout.open("d:/cap444/myfile.txt");
+   cout<<"Enter content of file"<<endl;
+   getline(cin,str);
+   fout<<str;
+   int pos1=fout.tellp();
+   cout<<"Current position:"<<pos1<<endl;
+   fout.seekp(2,ios::cur);
+   fout<<"PPP"<<endl;
+   int pos2=fout.tellp();
+   cout<<"Now Current position:"<<pos2;
+   fout.close();
+    return 0;
+}

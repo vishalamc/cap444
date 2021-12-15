@@ -1,0 +1,15 @@
+#include <iostream>
+#include<fstream>
+
+using namespace std;
+
+int main()
+{
+    ofstream fout;
+    fout.open("d://mynewfile.txt");
+    fout<<"hello"<<endl;
+    fout<<"world"<<endl;
+    fout.close();
+    cout<<"File has been created"<<endl;
+    return 0;
+}

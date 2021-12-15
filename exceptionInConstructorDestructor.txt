@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class division
+{
+private:
+    int *x;
+    int *y;
+    public:
+    division()
+    {
+
+        x=new int();
+        y=new int();
+        cout<<"Enter first value"<<endl;
+        cin>>*x;
+        cout<<"Enter second value"<<endl;
+        cin>>*y;
+        try{
+            if(*y==0)
+            {
+                throw *y;
+            }
+          }
+        catch(int p)
+        {
+            delete x;
+            delete y;
+            cout<<"exception in constructor"<<endl;
+            throw;
+        }
+    }
+    ~division()
+    {
+        try{
+        delete x;
+        delete y;
+        cout<<"destructor called"<<endl;
+        }
+        catch(...)
+        {
+            cout<<"destructor exception"<<endl;
+        }
+    }
+    int calc()
+    {
+        return (*x)/(*y);
+    }
+};
+int main()
+{
+
+        division d;
+        int r=d.calc();
+        cout<<"result:"<<r<<endl;
+     	return 0;
+}
