@@ -1,12 +1,1 @@
-Q1. Suppose you are planning to go to park so you are going to check tickets criteria online. The ticket rates details have been given
-*If children below 10 are not allowed to swing 
-*If age is between 10 to 15 allowed to swing and getting 10 % discount
-*If age is between 15 to 20 allowed to swing and getting 5 % discount
-*If age is more than 20 not then not eligible for swing and discount 
- The age of person will run until you enter the age of last family member and then calculate the total charge amount after entering each person’s age. Assume price of ticket is 100 Rs. each person.
-Q2.You have to generate electricity bill for a customer with the details as give below:
-Customer ID, Customer Name, Customer Address, Contact No, Units Consumed, Total payable amount. Following are the norms to calculate the unit amount:
-a) for initial 100 units it will cost 6rpu
- b) for next 100 units it will cost 8rpu 
-c) for next all units it will cost 10rpu. 
-Implement the concept of hybrid inheritance in this program.
+
