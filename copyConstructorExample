@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class mobile
+{
+public:
+    string modelno;
+
+    mobile()
+    {
+        modelno="samsung m12";
+    }
+    mobile(string model)
+    {
+        modelno=model;
+    }
+    mobile(mobile &m)
+    {
+        modelno=m.modelno;
+        cout<<modelno<<endl;
+
+    }
+    void getModelNo()
+    {
+        cout<<modelno<<endl;
+    }
+};
+int main()
+{
+    mobile m1;
+    m1.getModelNo();
+    mobile m2("Redmi Note 10");
+    m2.getModelNo();
+    mobile m3=m2;
+    m3.getModelNo();
+    return 0;
+}
