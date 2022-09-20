@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class admin
+{
+    string adminName;
+    string adminId;
+    friend void setAdmin(admin &admn);
+public:
+    void getAdmin()
+    {
+        cout<<"Admin:"<<adminName<<endl;
+        cout<<"Admin Id:"<<adminId<<endl;
+    }
+};
+void setAdmin(admin &admn)
+{
+    admn.adminName="kumar";
+    admn.adminId="admin1001";
+
+}
+int main()
+{
+    admin a1;
+    setAdmin(a1);
+    a1.getAdmin();
+    return 0;
+}
