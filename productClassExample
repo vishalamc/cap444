@@ -1,0 +1,114 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+class product
+{
+   string productName;
+   float productPrice;
+   int productQuantity;
+   public:
+   void setProductName(string product)
+   {
+       productName=product;
+   }
+   string getProductName()
+   {
+       return productName;
+   }
+   void setProductPrice(float price)
+   {
+       productPrice=price;
+   }
+   float getProductPrice()
+   {
+       return productPrice;
+   }
+   void setProductQuantity(int quantity)
+   {
+       productQuantity=quantity;
+   }
+   int getProductQunatity()
+   {
+       return productQuantity;
+   }
+   product()
+   {
+       productName="Mobile Phone";
+       productPrice=15500.50f;
+       productQuantity=50;
+   }
+    void addProduct(string pName,float pPrice)
+    {
+        productName=pName;
+        productPrice=pPrice;
+    }
+    float calculatePrice(int count)
+    {
+
+        float total=productPrice*count;
+        float netTotal=total+(total*0.10);
+        return netTotal;
+
+    }
+
+};
+
+int main()
+{
+    product p1;
+    int choice;
+    do
+    {
+        cout<<"Enter your choice"<<endl;
+        cout<<"1.Add Product"<<endl;
+        cout<<"2.Display Product"<<endl;
+        cout<<"3.Place Order"<<endl;
+        cout<<"4.Exit"<<endl;
+        cin>>choice;
+        switch(choice)
+        {
+        case 1:
+            {
+            cout<<"Enter product Name"<<endl;
+            string pname;
+            cin.ignore();
+            getline(cin,pname);
+            cout<<"Enter product Price"<<endl;
+            float pprice;
+            cin>>pprice;
+            p1.addProduct(pname,pprice);
+            cout<<"Product Added Successfully"<<endl;
+            break;
+            }
+        case 2:
+            {
+            cout<<"Product Details"<<endl;
+            cout<<"Product:"<<p1.getProductName()<<endl;
+            cout<<"Price:"<<p1.getProductPrice()<<endl;
+            cout<<"Product(in Stock:)"<<p1.getProductQunatity()<<endl;
+            break;
+            }
+        case 3:
+            {
+                int quantity;
+                cout<<"Enter Quantity"<<endl;
+                cin>>quantity;
+                int q=p1.getProductQunatity();
+                if(quantity<=q)
+                {
+                    cout<<"Total Price:"<<p1.calculatePrice(quantity)<<endl;
+                    p1.setProductQuantity(q-quantity);
+
+                }
+                else{
+                    cout<<"Product not available"<<endl;
+                }
+                break;
+            }
+
+
+        }
+    }while(choice!=4);
+
+    return 0;
+}
