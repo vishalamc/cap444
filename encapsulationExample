@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+class employee
+{
+private:
+    int empId;
+
+  public:
+      employee()
+      {
+          empId=4567;
+      }
+    int getempId()
+    {
+        return empId;
+    }
+    void setempId(int eid)
+    {
+        empId=eid;
+    }
+};
+
+int main()
+{
+    employee e1;
+    e1.setempId(1234);
+    cout<<e1.getempId();
+    return 0;
+}
