@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+class Academic
+{
+protected:
+    string programName;
+    string courseName;
+    void getAcademicDetails()
+    {
+        cout<<"Program:"<<programName<<endl;
+        cout<<"Course:"<<courseName<<endl;
+    }
+public:
+    Academic()
+    {
+        programName="MCA";
+        courseName="CAP444";
+    }
+};
+class Sports
+{
+    protected:
+    string sportsName;
+    string playGround;
+    void getSportsDetails()
+    {
+        cout<<"Game:"<<sportsName<<endl;
+        cout<<"Play Ground:"<<playGround<<endl;
+    }
+public:
+    Sports()
+    {
+        sportsName="FootBall";
+        playGround="Block 56";
+    }
+
+};
+class Student:public Academic,public Sports{
+public :
+    string studentName;
+    int regNo;
+    Student()
+    {
+        studentName="Mandeep Singh";
+        regNo=12212002;
+
+    }
+    void getStudentDetails()
+    {
+        cout<<"Student name:"<<studentName<<endl;
+        cout<<"Registration Number:"<<regNo<<endl;
+        getAcademicDetails();
+        getSportsDetails();
+    }
+};
+int main()
+{
+   Student s1;
+   s1.getStudentDetails();
+    return 0;
+}
