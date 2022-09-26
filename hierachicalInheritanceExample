@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+class OneIndia
+{
+protected:
+    string universityName;
+    string eventName;
+    string eventDate;
+    void getDetailsOneIndia()
+    {
+
+        cout<<"Event Name: "<<eventName<<endl;
+        cout<<"Presented by: "<<universityName<<endl;
+        cout<<"Event on Date: "<<eventDate<<endl;
+
+    }
+public:
+    OneIndia()
+    {
+        universityName="Lovely Professional University";
+        eventName="One India";
+        eventDate="15th October 2022";
+    }
+
+};
+class SCA:public OneIndia{
+
+public:
+    string schoolName;
+    string stateRepresent;
+    SCA()
+    {
+
+        schoolName="School of computer applications";
+        stateRepresent="Punjab";
+    }
+    void getDataSCA()
+    {
+        getDetailsOneIndia();
+        cout<<"School: "<<schoolName<<endl;
+        cout<<"State Represent: "<<stateRepresent<<endl;
+    }
+};
+class SCS:public OneIndia{
+
+public:
+    string schoolName;
+    string stateRepresent;
+    SCS()
+    {
+        schoolName="School of computer science";
+        stateRepresent="Maharashtra";
+    }
+    void getDataSCS()
+    {
+        getDetailsOneIndia();
+        cout<<"School: "<<schoolName<<endl;
+        cout<<"State Represent: "<<stateRepresent<<endl;
+    }
+};
+int main()
+{
+    SCA ca;
+    SCS cs;
+    cout<<"**************************"<<endl;
+    ca.getDataSCA();
+    cout<<"**************************"<<endl;
+    cs.getDataSCS();
+    return 0;
+}
