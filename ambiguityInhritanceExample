@@ -1,0 +1,34 @@
+// This program represent how to solve ambiguity problem in Multiple Inheritance
+#include <iostream>
+
+using namespace std;
+class Academic
+{
+protected:
+    void getUniversityDetails()
+    {
+        cout<<"LPU"<<endl;
+    }
+};
+class Sports
+{
+    protected:
+    void getUniversityDetails()
+    {
+        cout<<"Lovely Professional University"<<endl;
+    }
+};
+class Student:public Academic,public Sports
+{
+public:
+    void getDetails()
+    {
+        Academic::getUniversityDetails();
+    }
+};
+int main()
+{
+    Student s1;
+    s1.getDetails();
+    return 0;
+}
