@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+class Rectangle {
+   private:
+    float length;
+    float breadth;
+
+   public:
+    // 1. Constructor with no arguments
+    Rectangle() {
+        length = 6.9f;
+        breadth = 4.2f;
+    }
+
+    // 2. Constructor with two arguments
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+    // 3. Constructor with one argument
+    Rectangle(double len) {
+        length = len;
+        breadth = 7.2f;
+    }
+
+   float calculateArea() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    Rectangle r1, r2(8.2f, 6.6f), r3(8.2f);
+
+    cout << "When no argument is passed: " << endl;
+    cout << "Area of Rectangle = " << r1.calculateArea() << endl;
+
+    cout << "\nWhen 2 arguments are passed." << endl;
+    cout << "Area of Rectangle = " << r2.calculateArea() << endl;
+
+    cout << "\nWhen one argument is passed:" << endl;
+    cout << "Area of Rectangle= " << r3.calculateArea() << endl;
+
+    return 0;
+}
