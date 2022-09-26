@@ -1,0 +1,46 @@
+#include <iostream>
+#include <windows.h>
+#include <unistd.h>
+using namespace std;
+class WindowColor{
+protected:
+    void getColor(string name)
+    {
+        if (name=="Blue")
+        {
+            cout<<"Wait..."<<endl;
+            sleep(10);
+            cout<<"Background Color Changed in Blue Color"<<endl;
+            system("Color 17");//system() is used to invoke an operating system command
+        }
+        else if (name=="Red")
+        {
+            cout<<"Wait..."<<endl;
+            sleep(10);
+            cout<<"Background Color Changed in Red Color"<<endl;
+            system("Color 46");
+        }
+        else
+        {
+            cout<<"Color Not available"<<endl;
+        }
+    }
+};
+class ConsoleBackground:public WindowColor
+{
+public:
+    void setName()
+    {
+        string clr;
+        cout<<"Enter color name"<<endl;
+        cin>>clr;
+        getColor(clr);
+    }
+};
+int main()
+{
+   ConsoleBackground C1;
+   C1.setName();
+
+    return 0;
+}
