@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+class Student{
+protected:
+    string name;
+    int regno;
+    void getStudent()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"RegNo.:"<<regno<<endl;
+    }
+public:
+
+    Student()
+    {
+        name="Deepak Sharma";
+        regno=11212212;
+    }
+};
+class Exam:public Student{
+protected:
+    string examType;
+    string examStatus;
+    void getExamDetails()
+    {
+        cout<<"Exam:"<<examType<<endl;
+        cout<<"Status:"<<examStatus<<endl;
+    }
+public:
+    Exam()
+    {
+        examType="MTE";
+        examStatus="Pass";
+    }
+};
+class Project
+{
+protected:
+    string projectName;
+    string projectStatus;
+    void getProjectDetails()
+    {
+        cout<<"Project:"<<projectName<<endl;
+        cout<<"Status:"<<projectStatus<<endl;
+    }
+public:
+    Project()
+    {
+        projectName="Capstone Project";
+        projectStatus="Pass";
+    }
+};
+class Result:public Exam,public Project
+{
+private:
+    string universityName;
+public:
+    Result()
+    {
+        universityName="LPU";
+    }
+    void getResult()
+    {
+        cout<<"MTE Result Published in "<<universityName<<endl;
+        getStudent();
+        getExamDetails();
+        getProjectDetails();
+    }
+
+};
+int main()
+{
+   Result r1;
+   r1.getResult();
+    return 0;
+}
