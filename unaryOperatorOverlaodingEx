@@ -1,0 +1,40 @@
+//Example of Unary operator overloading
+#include <iostream>
+
+using namespace std;
+class bodyweight
+{
+    public:
+            int wt;
+        bodyweight()
+        {
+            wt=0;
+        }
+        bodyweight(int w)
+        {
+            wt=w;
+        }
+        bodyweight operator ++()
+        {
+            bodyweight t;
+            t.wt=++wt;
+        return t;
+        }
+        bodyweight operator ++(int)
+        {
+            bodyweight t;
+            t.wt=wt++;
+        return t;
+        }
+        void getWeight()
+        {
+            cout<<"wt:"<<wt<<endl;
+        }
+};
+int main()
+{
+    bodyweight b1(80),b2;
+    b2=++b1;
+    b2.getWeight();
+return 0;
+}
