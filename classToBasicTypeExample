@@ -1,0 +1,33 @@
+#include <iostream>
+    using namespace std;
+    class A 
+   { 
+	public: 
+    int a; 
+    A() 
+    { 
+        a=0; 
+    } 
+    A(int m) 
+    { 
+        a=m; 
+    } 
+    void getA() 
+    { 
+        cout<<a<<endl; 
+    } 
+    operator int() 
+    { 
+      return a; 
+    } 
+ 
+}; 
+ 
+int main() 
+{ 
+    int x; 
+    A a1(5); 
+    x=a1;//class to basic type 
+    cout<<x; 
+    return 0; 
+}
