@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+class A
+{
+protected:
+    int a;
+    public:
+    int getA()
+    {
+        a=20;
+        return a;
+    }
+};
+class B:virtual public A
+{
+protected:
+    int b;
+    public:
+    int getB()
+    {
+        b=30;
+        return a;
+    }
+};
+class C:virtual public A
+{
+protected:
+    int c;
+    public:
+    int getC()
+    {
+        c=20;
+        return c;
+    }
+};
+class D:public B,public C
+{
+protected:
+    int d;
+    public:
+    int getD()
+    {
+        d=40;
+        return d;
+    }
+};
+int main()
+{
+  D d1;
+  cout<<d1.getA();
+    return 0;
+}
