@@ -1,0 +1,80 @@
+#include<iostream>
+#include<windows.h>
+#include "mmsystem.h"
+using namespace std;
+
+class Music
+{
+        public:
+            void playMusic()
+            {
+                PlaySound(TEXT("panchayat.wav"),NULL,SND_SYNC);
+            }
+        void playMusic(string songsname)
+        {
+            if(songsname=="malgudi")
+            {
+                PlaySound(TEXT("malgudi.wav"),NULL,SND_SYNC);
+            }
+            else{
+                cout<<"Audio not available"<<endl;
+                }
+        }
+    void playMusic(string musicType,string songsname)
+    {
+        if(musicType=="hindi" && songsname=="malgudi")
+        {
+            PlaySound(TEXT("malgudi.wav"),NULL,SND_SYNC);
+
+        }
+        if(musicType=="english" && songsname=="BackstreetBoys")
+        {
+            PlaySound(TEXT("BackstreetBoys.wav"),NULL,SND_SYNC);
+
+        }
+
+         else{
+            cout<<"Audio not available"<<endl;
+            }
+    }
+};
+int main()
+{
+    Music m1;
+
+    int choice;
+    string song,musictype;
+    do{
+
+            cout<<"Select your choice:"<<endl;
+            cout<<"1.Play Music"<<endl;
+            cout<<"2.Enter your song"<<endl;
+            cout<<"3.Choose your music type"<<endl;
+            cin>>choice;
+
+            switch(choice)
+            {
+            case 1:
+                 m1.playMusic();
+
+                 break;
+            case 2:
+                cout<<"Enter song name"<<endl;
+                cin>>song;
+                m1.playMusic(song);
+                break;
+            case 3:
+                cout<<"Enter music type"<<endl;
+                cin>>musictype;
+                cout<<"Enter song name"<<endl;
+                cin>>song;
+                m1.playMusic(musictype,song);
+                break;
+            default:
+                exit(0);
+            }
+
+    }while(choice!=4);
+
+    return 0;
+}
