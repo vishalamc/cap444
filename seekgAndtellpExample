@@ -1,0 +1,19 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+   ofstream fout;
+   fout.open("D:\\myfiles\\randomFile.txt");
+   fout<<"hello world";
+   cout<<fout.tellp()<<endl;
+   fout.seekp(-5,ios::end);
+   cout<<fout.tellp()<<endl;
+   fout<<"Kumar";
+   cout<<fout.tellp()<<endl;
+   fout.seekp(0,ios::beg);
+   fout<<"Rohan";
+   fout.close();
+    return 0;
+}
