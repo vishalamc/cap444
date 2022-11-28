@@ -1,0 +1,17 @@
+// Example of function template
+#include <iostream>
+using namespace std;
+template<class T>
+T addition(T a,T b)
+{
+    T c;
+    c=a+b;
+ return c;
+}
+
+int main()
+{
+   cout<<addition(11,14);
+
+    return 0;
+}
