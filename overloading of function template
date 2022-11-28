@@ -1,0 +1,27 @@
+// Example of overloading of function template
+#include <iostream> 
+ 
+using namespace std; 
+ 
+template<class T> 
+T add(T a, T b) 
+{ 
+    T result1; 
+    result1=a+b; 
+    return result1;
+} 
+template<class T> 
+T add(T a, T b, T c) 
+{ 
+    T result2; 
+    result2=a+b+c; 
+    return result2; 
+} 
+int main() 
+{ 
+cout<<add(2,3)<<endl; 
+cout<<add(6.5,1.1)<<endl; 
+cout<<add(7,7,7)<<endl; 
+cout<<add(1.1,1.1,1.1)<<endl; 
+return 0; 
+} 
