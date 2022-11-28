@@ -6,10 +6,7 @@ class arrayList
 {
 public:
     T num[arraySize];
-    arrayList()
-    {
-
-    }
+   
     void add(T n[])
     {
         for(int i=0;i<arraySize;i++)
