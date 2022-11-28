@@ -1,0 +1,16 @@
+//Example:Function template with different type parameters
+#include <iostream>
+using namespace std;
+template<typename T1,typename T2>
+void addition(T1 a, T2 b)
+{
+
+   cout<<a+b;
+}
+
+int main()
+{
+   addition(11,14.4f);
+
+    return 0;
+}
