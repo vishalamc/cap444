@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    try{
+    double doubleNumber1;
+    double doubleNumber2;
+    double doubleResult;
+    cout<<"Enter first Value"<<endl;
+    cin>>doubleNumber1;
+    cout<<"Enter second Value"<<endl;
+    cin>>doubleNumber2;
+    if(doubleNumber2==0)
+    {
+        throw 10;
+    }
+    doubleResult=doubleNumber1/doubleNumber2;
+    cout<<"Result:"<<doubleResult;
+    }
+
+    catch(...)
+    {
+      cout<<"Please do not use value 0"<<endl;
+    }
+
+   return 0;
+}
