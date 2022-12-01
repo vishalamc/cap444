@@ -1,0 +1,12 @@
+// This is the example of command line argument 
+#include<iostream>
+using namespace std;
+
+int main(int argc,char *argv[])
+{
+cout<<"Argument counter: "<<argc<<endl;
+cout<<"Argument1 is:"<<argv[0]<<endl;
+cout<<"Argument2 is:"<<argv[1]<<endl;
+cout<<"Argument3 is:"<<argv[2]<<endl;
+return 0;
+}
