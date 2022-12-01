@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+              int a=1;
+              try
+              {
+                      try
+                      {
+                          throw a;
+                      }
+                      catch(int x)
+                      {
+                          cout<<"inner exception\n";
+                          throw x;
+                      }
+
+              }
+              catch(int n)
+              {
+                  cout<<"outer eception";
+              }
+              cout<<"\nEnd of program.";
+  return 0;
+}
