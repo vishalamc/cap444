@@ -1,0 +1,44 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class employee
+{
+    public:
+
+        int id; string name;
+    public:
+        void getData()
+        {
+        cout<<"Enter name:"<<endl;
+        getline(cin,name);
+        cout<<"Enter id:"<<endl;;
+        cin>>id;
+        }
+        void showData()
+        {
+        cout<<"Name:"<<name<<",Id:"<<id<<endl;
+        }
+};
+
+int main()
+{
+    employee e1;
+    ofstream fout;
+    ifstream fin;
+    fout.open("D:\\myfiles\\employee.txt");
+    e1.getData();
+    fout.write((char*)&e1,sizeof(e1));
+    fout.close();
+    cout<<"\nFile created and data saved ."<<endl;
+
+    fin.open("D:\\myfiles\\employee.txt");
+
+    fin.read((char*)&e1,sizeof(e1));
+
+    e1.showData();
+    fin.close();
+
+    return 0;
+}
