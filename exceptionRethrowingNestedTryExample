@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  try{
+      try
+      {
+          throw 10;
+      }
+      catch(int x)
+      {
+          cout<<"Inner block exception"<<endl;
+          throw "ex";
+      }
+
+  }
+  catch(...)
+  {
+      cout<<"exception re-throwing in outer block"<<endl;
+  }
+
+   return 0;
+}
