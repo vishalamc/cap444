@@ -27,13 +27,13 @@ int main()
     employee e1;
     ofstream fout;
     ifstream fin;
-    fout.open("D:\\myfiles\\employee.txt");
+    fout.open("employee.txt");
     e1.getData();
     fout.write((char*)&e1,sizeof(e1));
     fout.close();
     cout<<"\nFile created and data saved ."<<endl;
 
-    fin.open("D:\\myfiles\\employee.txt");
+    fin.open("employee.txt");
 
     fin.read((char*)&e1,sizeof(e1));
 
