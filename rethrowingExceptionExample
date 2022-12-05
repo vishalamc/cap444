@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+void rethrowException()
+{
+     try{
+       throw 10;
+   }
+   catch(int x)
+   {
+       cout<<"exception in function"<<endl;
+       throw;
+   }
+}
+int main()
+{
+  try{
+      rethrowException();
+  }
+  catch(int y)
+  {
+      cout<<"exception re-throwing"<<endl;
+  }
+   return 0;
+}
