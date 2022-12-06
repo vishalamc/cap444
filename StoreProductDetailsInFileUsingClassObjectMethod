@@ -1,0 +1,68 @@
+#include <iostream>
+#include<fstream>
+
+using namespace std;
+class product
+{
+public:
+    string productName;
+    float productPrice;
+    int productQuantity;
+
+
+     void addProductDetails()
+    {
+        cout<<"Enter Product Name"<<endl;
+        cin.ignore();
+        getline(cin,productName);
+        cout<<"Enter Product Price"<<endl;
+        cin>>productPrice;
+        cout<<"Enter product quantity"<<endl;
+        cin>>productQuantity;
+
+    }
+    void getProductDetails()
+    {
+      cout<<"Product Name:"<<productName<<endl;
+      cout<<"Product Price:"<<productPrice<<endl;
+      cout<<"Product Quantity:"<<productQuantity<<endl;
+    }
+
+};
+
+int main()
+{
+    int n;
+    ofstream fout;
+    ifstream fin;
+    product p1;
+    do
+    {
+        cout<<"Select your choice"<<endl;
+        cout<<"1.Add Product\n2.Display Product\n3.Exit"<<endl;
+        cin>>n;
+        switch(n)
+        {
+        case 1:
+            p1.addProductDetails();
+            fout.open("d:/myfiles/product.txt",ios::app);
+            fout.write((char*)&p1,sizeof(p1));
+            fout.close();
+        cout<<"Product added Successfully"<<endl;
+            break;
+        case 2:
+            fin.open("d:/myfiles/product.txt");
+           while(fin.read((char*)&p1,sizeof(p1)))
+           {
+              p1.getProductDetails();
+           }
+            fout.close();
+            break;
+        case 3:
+                 exit(0);
+        default:
+            break;
+        }
+    }while(n!=3);
+    return 0;
+}
