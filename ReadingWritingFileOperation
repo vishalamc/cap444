@@ -1,0 +1,26 @@
+#include <iostream>
+#include<fstream>
+
+using namespace std;
+
+int main()
+{
+    ofstream fout;
+    ifstream fin;
+    char ch;
+    cout<<"File Open/Create Operation"<<endl;
+    fout.open("file1.txt");
+    fout<<"hello"<<endl;
+    fout<<"world"<<endl;
+    cout<<"File has been created successfully"<<endl;
+    fout.close();
+    cout<<"File Reading Operation"<<endl;
+    fin.open("file1.txt");
+    while(!fin.eof())
+    {
+       ch=fin.get();
+       cout<<ch;
+    }
+   fin.close();
+return 0;
+}
