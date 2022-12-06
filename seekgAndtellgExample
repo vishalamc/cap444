@@ -1,0 +1,21 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+   ifstream fin;
+   char ch;
+   fin.open("D:\\myfiles\\randomFile.txt");
+   cout<<"Current location of file pointer is: "<<fin.tellg()<<endl;
+   fin.seekg(5,ios::beg);
+   cout<<"Now Current location of file pointer is: "<<fin.tellg()<<endl;
+   cout<<"File Contents from location 5:"<<endl;
+   while(!fin.eof())
+   {
+       ch=fin.get();
+       cout<<ch;
+   }
+   fin.close();
+    return 0;
+}
