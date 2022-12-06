@@ -7,13 +7,17 @@ int main()
    ofstream fout;
    fout.open("D:\\myfiles\\randomFile.txt");
    fout<<"hello world";
-   cout<<fout.tellp()<<endl;
+   cout<<"File Created Successfully"<<endl;
+   cout<<"Current location of file pointer is: "<<fout.tellp()<<endl;
    fout.seekp(-5,ios::end);
-   cout<<fout.tellp()<<endl;
+   cout<<"Now Current location of file pointer is: "<<fout.tellp()<<endl;
    fout<<"Kumar";
-   cout<<fout.tellp()<<endl;
+   cout<<"New Content added successfully"<<endl;
+   cout<<"New Current location of file pointer is: "<<fout.tellp()<<endl;
    fout.seekp(0,ios::beg);
+   cout<<"File pointer location now in starting position"<<endl;
    fout<<"Rohan";
+   cout<<"New Content added successfully"<<endl;
    fout.close();
     return 0;
 }
