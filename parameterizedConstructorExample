@@ -1,0 +1,29 @@
+//Constructor Example: - Paramerized Constructor 
+#include <iostream>
+using namespace std;
+class mobile
+{
+ public:
+ string mobileName;
+ string mobileModel;
+ float mobilePrice;
+ mobile(string mname,string mmodel,float mprice)
+ {
+ cout<<"Paramerized Constructor"<<endl;
+ mobileName=mname;
+ mobileModel=mmodel;
+ mobilePrice=mprice;
+ }
+  void getData()
+ {
+ cout<<"Mobile Name:"<<mobileName<<endl;
+ cout<<"Mobile Model No.:"<<mobileModel<<endl;
+ cout<<"Mobile Price"<<mobilePrice<<endl;
+ }
+};
+int main()
+{
+ mobile m1("Samsung","J10",12500.5f);
+ m1.getData();
+ return 0;
+}
