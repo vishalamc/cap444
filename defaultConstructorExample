@@ -1,0 +1,30 @@
+//Constructor Example: - Default Constructor 
+#include <iostream>
+#include<windows.h>
+using namespace std;
+class mobile
+{
+ public:
+ string mobileName;
+ string mobileModel;
+ float mobilePrice;
+ mobile()
+ {
+ cout<<"Default Constructor"<<endl;
+ mobileName="Samsung";
+ mobileModel="J2";
+ mobilePrice=12500;
+ }
+  void getData()
+ {
+ cout<<"Mobile Name:"<<mobileName<<endl;
+ cout<<"Mobile Model No.:"<<mobileModel<<endl;
+ cout<<"Mobile Price"<<mobilePrice<<endl;
+ }
+};
+int main()
+{
+ mobile m1;
+ m1.getData();
+ return 0;
+}
