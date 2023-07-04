@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+template<class T,int arraySize>
+class arrayList
+{
+public:
+    T num[arraySize];
+
+    void add(T n[])
+    {
+        for(int i=0;i<arraySize;i++)
+        {
+            num[i]=n[i];
+        }
+    }
+    void disp()
+    {
+        cout<<"Array Elements are:"<<endl;
+        for(int i=0;i<arraySize;i++)
+        {
+            cout<<num[i]<<endl;
+        }
+    }
