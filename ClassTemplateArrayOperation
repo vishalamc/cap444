@@ -21,3 +21,27 @@ public:
             cout<<num[i]<<endl;
         }
     }
+    void findLowest()
+    {
+        T lowest=num[0];
+        for(int i=1;i<arraySize;i++)
+        {
+            if(num[i]<lowest)
+            {
+                lowest=num[i];
+            }
+        }
+        cout<<"Lowest element in Array:"<<lowest<<endl;
+    }
+
+};
+
+int main()
+{
+  arrayList <int,5> a1;
+  int num1[]={12,23,8,33,44};
+  a1.add(num1);
+  a1.disp();
+  a1.findLowest();
+    return 0;
+}
